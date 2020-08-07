@@ -1,0 +1,282 @@
+
+/* ---------------------------- COMMON COMPONENTS ----------------------------*/
+
+body {
+    background: lightskyblue;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.container {
+    text-align: center;
+    padding: 0px;
+}
+
+/* ---------------------------- HEADER COMPONENTS ----------------------------*/
+
+.header-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 62px;
+    text-shadow: 2px 2px 2px white;
+}
+
+.header-links {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.header-links-content {
+    padding: 0px 15px;
+    color: white;
+    text-decoration: underline;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.header-body {
+    margin-top: 40px;
+}
+
+.header-links-title,
+.header-body-title {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.header-body-content {
+    font-size: 18px;
+    margin: 5px 0px;
+}
+
+@media only screen and (max-width: 960px) {
+    .header-title {
+        font-family: 'Courier New', Courier, monospace;
+        padding: 15px 0px;
+        font-weight: bold;
+        font-size: 48px;
+        text-shadow: 2px 2px 2px white;
+    }
+
+    .header-links-content {
+        display: flex;
+        justify-content: center;
+    }    
+}
+
+@media only screen and (max-width: 400px) {
+    .header-title {
+        /* font-family: 'Courier New', Courier, monospace; */
+        padding: 15px 0px;
+        font-weight: bolder;
+        font-size: 42px;
+        text-shadow: 2px 2px 2px white;
+    }
+}
+
+/* ---------------------------- BODY COMPONENTS ----------------------------*/
+
+.body-box {
+    margin-bottom: 40px;
+}
+
+.tableBox {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tableBox th {
+    font-size: 22px;
+    padding: 10px !important;
+}
+
+.tableBox td {
+    padding: 10px !important;
+}
+
+.DisplayTable {
+    display: table;
+    table-layout: fixed; 
+    width: 100%;
+}
+
+.DisplayCell {
+    display: table-cell;
+    overflow-x: auto;
+    width: 100%;
+} 
+
+.HH-information,
+.HI-information,
+.PF-information,
+.EI-information,
+.FI-information {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.HH-title,
+.HI-title,
+.PF-title,
+.EI-title,
+.FI-title,
+.BF-title,
+.AN-title {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.browser-fingerprint {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.BF-fingerprint {
+    color: blue;
+    font-size: 18px;
+    overflow: auto;
+    padding: 0px 15px;
+}
+
+.announcement {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.AN-announcement {
+    font-size: 18px;
+}
+
+/* ---------------------------- BF DOCUMENTS ----------------------------*/
+
+.TOC-title {
+    font-weight: bold;
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.TOC-body {
+    margin-bottom: 40px;
+}
+
+.TOC-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbering {
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+}
+
+.bullet {
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    margin-left: 25px;
+}
+
+#bullet-circle {
+    font-size: 8px !important;
+    padding-right: 15px;
+    margin-top: -2px;
+}
+
+.doc-box {
+    text-align: left;
+    margin: 20px 0px;
+}
+
+.doc-numbering {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.doc-title {
+    display: flex; 
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.doc-bullet {
+    font-style: italic;
+    font-size: 18px;
+    margin-left: 25px;
+}
+
+.doc-content {
+    margin-left: 25px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-style: normal;
+}
+
+#table-doc {
+    width: 100%;
+    margin: 40px 0px;
+}
+
+#table-leftsidebar {
+    width: 25%;
+}
+
+.td-scrollable {
+    height: 800px;
+    overflow: auto;
+}
+
+.td-scrollable::-webkit-scrollbar {
+    /* No display scrollbar on Chrome */
+    width: 0px !important; 
+}
+
+.td-scrollable { 
+    /* No display scrollbar on Firefox */
+    overflow: -moz-scrollbars-none; 
+    /* No display scrollbar on IE+10 */
+    -ms-overflow-style: none;
+}
+
+#table-doc td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media all and (max-width: 750px){
+    #table-doc td {
+        display: block;
+        width: 100%;
+    }
+
+    #table-doc tr {
+        display: block;
+        margin-bottom: 30px;
+    }
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+  }
