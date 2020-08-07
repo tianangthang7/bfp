@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Title of website -->
+    <title>Browser Fingerprint</title>
+
+    <!-- Icon of website -->
+    <link rel="icon" href="images/icon.png"
+
+    <!-- Include CDN Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Include JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Include style.css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Include fontawesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Include index javascript -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0/dist/ua-parser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.0.6/fingerprint2.js"></script>
+    <script src="https://cdn.rawgit.com/muaz-khan/DetectRTC/master/DetectRTC.js"></script>
+    <script src="client.min.js"></script>
+    <script src="audiofingerprint.js"></script>
+     <script src="sensor-libs/motion-sensors.js"></script>
+    <script src="orientation.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Render body information -->
+    <!-- 
+    Some "id" is used for updating its content/value:
+    + HH-content
+    + HI-content
+    + PF-content
+    + EI-content
+    + FI-content
+    + BF-fingerprint
+    + AN-announcement
+-->
+
+<!-- The design of website -->
+<div class="container">
+    <div class="header-box">
+        <div class="header-title">BROWSER FINGERPRINT DETECTION</div>
+        <div class="header-links">
+            <div class="header-links-title">Important Things</div>
+            <a href="#HH-title" class="header-links-content" title="Displaying information of HTTP headers">HTTP Headers</a>
+            <a href="#HI-title" class="header-links-content" title="Displaying hardware information of device">Hardware Information</a>
+            <a href="#PF-title" class="header-links-content" title="Displaying personal features of device">Personal Features</a>
+            <a href="#EI-title" class="header-links-content" title="Displaying environment information of device">Environment Information</a>
+            <a href="#FI-title" class="header-links-content" title="Displaying canvas, webgl and audio fingerprints of device">Fingerprints Information</a>
+            <a href="#BF-title" class="header-links-content" title="Displaying value of browser fingerprint">Browser Fingerprint</a>
+            <a href="#AN-title" class="header-links-content" title="Displaying announcement about status of fingerprint">Announcement</a>
+        </div>
+        <div class="header-body">
+            <div class="header-body-title">Developed By</div>
+            <div class="header-body-content">Lê Thành Công - D3M team, Zalopay@VNG</div>
+            <div class="header-body-content">Trần Kiến Quốc - D3M team, Zalopay@VNG</div>
+        </div>
+    </div>
+    <div class="body-box">
+        <!--
+            Target: Displaying information of HTTP headers
+            Shortcut name for style.css: HH
+        -->
+        <div class="HH-information">
+            <div class="HH-title" id="HH-title">HTTP Headers Information</div>
+            <div class="DisplayTable">
+                <div class="DisplayCell">
+                    <table border="1" class="tableBox">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="HH-content">
+                            <!-- LOOP TO INSERT CONTENTS HERE -->
+
+                            <tr>
+                                <td id="HH-0-field">User-Agent</td>
+                                <td id="HH-0-value">Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-1-field">Device brand</td>
+                                <td id="HH-1-value">undefined</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-2-field">Device model</td>
+                                <td id="HH-2-value">undefined</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-3-field">Device type</td>
+                                <td id="HH-3-value">desktop</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-4-field">OS name</td>
+                                <td id="HH-4-value">GNU/Linux</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-5-field">OS version</td>
+                                <td id="HH-5-value">undefined</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-6-field">Client name</td>
+                                <td id="HH-6-value">Chrome</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-7-field">Client version</td>
+                                <td id="HH-7-value">84.0.4147.105</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-8-field">Zalo version</td>
+                                <td id="HH-8-value">Not zalo</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-9-field">Accept</td>
+                                <td id="HH-9-value">text/html application/xhtml+xml application/xml;q&#x3D;0.9 image/webp image/apng */*;q&#x3D;0.8 application/signed-exchange;v&#x3D;b3;q&#x3D;0.9</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-10-field">Accept encoding</td>
+                                <td id="HH-10-value">gzip, deflate, br</td>    
+                            </tr>
+                            <tr>
+                                <td id="HH-11-field">Accept language</td>
+                                <td id="HH-11-value">en-US,en;q&#x3D;0.9,vi;q&#x3D;0.8</td>    
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            Target: Displaying hardware information of device
+            Shortcut name for style.css: HI
+        -->
+        <div class="HI-information">
+            <div class="HI-title" id="HI-title">Hardware Information</div>
+            <div class="DisplayTable">
+                <div class="DisplayCell">
+                    <table border="1" class="tableBox">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="HI-content">
+                            <!-- LOOP TO INSERT CONTENTS HERE -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            Target: Displaying personal features of device
+            Shortcut name for style.css: PF
+        -->
+        <div class="PF-information">
+            <div class="PF-title" id="PF-title">Personal Features</div>
+            <div class="DisplayTable">
+                <div class="DisplayCell">
+                    <table border="1" class="tableBox">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="PF-content">
+                            <!-- LOOP TO INSERT CONTENTS HERE -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            Target: Displaying environment information of user
+            Shortcut name for style.css: EI
+        -->
+        <div class="EI-information">
+            <div class="EI-title" id="EI-title">Environment Information</div>
+            <div class="DisplayTable">
+                <div class="DisplayCell">
+                    <table border="1" class="tableBox">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="EI-content">
+                            <!-- LOOP TO INSERT CONTENTS HERE -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            Target: Displaying canvas, webgl and audio fingerprints of device
+            Shortcut name for style.css: FI
+        -->
+        <div class="FI-information">
+            <div class="FI-title" id="FI-title">Fingerprints Information</div>
+            <div class="DisplayTable">
+                <div class="DisplayCell">
+                    <table border="1" class="tableBox">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="FI-content">
+                            <!-- LOOP TO INSERT CONTENTS HERE -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+            Target: Displaying value of browser fingerprint
+            Shortcut name for style.css: BF
+        -->
+        <div class="browser-fingerprint">
+            <div class="BF-title" id="BF-title">Browser Fingerprint</div>
+            <div class="BF-fingerprint" id="BF-fingerprint">
+                Loading...
+            </div>
+        </div>
+
+        <!-- 
+            Target: Displaying announcement about status of fingerprint
+            Shorcut name for style.css: AN
+        -->
+        <div class="announcement">
+            <div class="AN-title" id="AN-title">Announcement</div>
+            <div class="AN-announcement" id="AN-announcement">
+                Loading...
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Include Javascript things of Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
