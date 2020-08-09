@@ -62,6 +62,13 @@ function getPersonalInfo(content) {
     content.innerHTML += `<tr><td id="PF-2-field">devicePixelRatio</td>` +
         `<td id="PF-2-value">${window.devicePixelRatio}</td></tr>`;
 
+
+        content.innerHTML += `<tr><td id="PF-2-field">window.screen.availHeight</td>` +
+        `<td id="PF-2-value">${window.screen.availHeight}</td></tr>`;
+
+    content.innerHTML += `<tr><td id="PF-2-field">window.screen.availWidth</td>` +
+    `<td id="PF-2-value">${window.screen.availWidth}</td></tr>`;
+
     content.innerHTML += `<tr><td id="PF-3-field">Time zone</td>` +
         `<td id="PF-3-value">${new Date().toTimeString().slice(9,18)}</td></tr>`;
 
